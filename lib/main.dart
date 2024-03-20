@@ -3,6 +3,7 @@ import 'package:firebase_test/register_page.dart';
 import 'package:flutter/material.dart';
 
 import 'firebase_options.dart';
+import 'home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const RegisterPage(),
+      home: const Homepage(),
     );
   }
 }

@@ -87,18 +87,18 @@ class _RegisterPageState extends State<RegisterPage> {
                     email: emailController.text,
                     password: passwordController.text,
                   )
-                      .then((credentials)async {
-                   await  FirebaseFirestore.instance
+                      .then((credentials) async {
+                    await FirebaseFirestore.instance
                         .collection("users")
                         .doc(credentials.user!.uid)
-                        .set({
-                      "uid": credentials.user!.uid,
-                      "username": userController.text,
-                      "email": emailController.text,
-                      "phone": phoneController.text,
-                      
-
-                    }).then(
+                        .set(
+                      {
+                        "uid": credentials.user!.uid,
+                        "username": userController.text,
+                        "email": emailController.text,
+                        "phone": phoneController.text,
+                      },
+                    ).then(
                       (value) => Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) => Homepage(),
